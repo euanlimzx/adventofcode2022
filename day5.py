@@ -58,9 +58,15 @@ for ins in bigintel:
     num = ins[0]
     frm = ins[1]-1
     to = ins[2]-1
-    for i in range(num):
-        var = stacks[frm].pop()
-        stacks[to].append(var)
+    #for i in range(num):
+    #   var = stacks[frm].pop()
+    #   stacks[to].append(var)
+    length = len(stacks[frm])
+    var = stacks[frm][length-num:]
+    for i in var:
+        stacks[frm].pop()
+        stacks[to].append(i)
+
 
 #[['C'], ['M'], ['P', 'D', 'N', 'Z']]
 
